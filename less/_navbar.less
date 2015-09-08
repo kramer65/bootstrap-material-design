@@ -2,7 +2,22 @@
   background-color: @primary;
   border: @zero;
   border-radius: @zero;
-
+  &.navbar-white {
+    border: 1px solid #ccc;
+    box-shadow: inset 0 1px 2px #ccc;
+    .navbar-brand {margin-left: -1px;}
+    .navbar-right {margin-right: -16px;}
+    .navbar-nav {
+      > .active > a {
+        &,
+        &:hover,
+        &:focus {
+          border-top: 1px solid #ccc;
+          background-color: @grey-200;
+        }
+      }
+    }
+  }
   .navbar-brand {
     position: relative;
     height: 60px;
@@ -180,7 +195,7 @@
         padding: 13px 16px;
         &:hover,
         &:focus {
-          color: @material-color;
+          color: inherit;
           background-color: @grey-200;
         }
       }
