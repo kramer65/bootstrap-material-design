@@ -2554,6 +2554,7 @@ Then, run this script to get the list.
 }
 body {
   background-color: #eeeeee;
+  color: #212121;
 }
 body.inverse {
   background: #333333;
@@ -2858,7 +2859,7 @@ body .jumbotron-material-blue-grey,
 .btn {
   position: relative;
   padding: 8px 30px;
-  border: 0;
+  border: 1px solid #bdbdbd;
   margin: 10px 1px;
   cursor: pointer;
   border-radius: 2px;
@@ -2870,6 +2871,9 @@ body .jumbotron-material-blue-grey,
 }
 .btn:hover:not(.btn-link):not(.btn-flat):not(.btn-fab) {
   box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.12), 0 1px 6px 0 rgba(0, 0, 0, 0.12);
+}
+.btn.btn-default:hover:not(.btn-link):not(.btn-flat):not(.btn-fab) {
+  background-color: rgba(0, 0, 0, 0.2);
 }
 .btn:active:not(.btn-link):not(.btn-flat):not(.btn-fab) {
   box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
@@ -3605,6 +3609,20 @@ body .jumbotron-material-blue-grey,
   position: relative;
   top: -5px;
   margin: 0 auto;
+}
+.btn-link,
+.btn-default.btn-link,
+.btn-flat,
+.btn-default.btn-flat,
+.btn[class*="btn-"]:not(.btn-default) {
+  border-color: transparent;
+}
+.btn-link:hover,
+.btn-default.btn-link:hover,
+.btn-flat:hover,
+.btn-default.btn-flat:hover,
+.btn[class*="btn-"]:not(.btn-default):hover {
+  background-color: none;
 }
 .btn-link,
 .btn:not([class*="btn-"]),
@@ -4857,9 +4875,8 @@ fieldset[disabled] .form-control:focus,
 .form-control:focus,
 fieldset[disabled] .form-control.focus,
 .form-control.focus {
-  padding: 0;
+  padding: 0 10px;
   float: none;
-  border: 0;
   box-shadow: none;
   border-radius: 0;
 }
@@ -4869,8 +4886,23 @@ fieldset[disabled] .form-control:focus:disabled,
 .form-control:focus:disabled,
 fieldset[disabled] .form-control.focus:disabled,
 .form-control.focus:disabled {
-  border-style: dashed;
-  border-bottom: 1px solid #757575;
+  background: #eceff1;
+}
+.input-group-sm fieldset[disabled] .form-control,
+.input-group-lg fieldset[disabled] .form-control,
+.input-group-sm .form-control,
+.input-group-lg .form-control,
+.input-group-sm fieldset[disabled] .form-control:focus,
+.input-group-lg fieldset[disabled] .form-control:focus,
+.input-group-sm .form-control:focus,
+.input-group-lg .form-control:focus,
+.input-group-sm fieldset[disabled] .form-control.focus,
+.input-group-lg fieldset[disabled] .form-control.focus,
+.input-group-sm .form-control.focus,
+.input-group-lg .form-control.focus {
+  border-radius: 0;
+  padding-left: 16px;
+  padding-right: 16px;
 }
 fieldset[disabled] .form-control:textarea,
 .form-control:textarea {
@@ -4882,14 +4914,16 @@ select[multiple].form-control.focus {
   height: 85px;
 }
 .form-control {
-  border: 0;
-  background-image: linear-gradient(#009688, #009688), linear-gradient(#d2d2d2, #d2d2d2);
+  border: 1px solid #cccccc;
+  background-image: none;
   background-size: 0 2px, 100% 1px;
   background-repeat: no-repeat;
   background-position: center bottom, center calc(100% - 1px);
   background-color: transparent;
   background-color: rgba(0, 0, 0, 0);
-  transition: background 0s ease-out;
+  height: 33px;
+  padding: 0 10px;
+  transition: border 0s ease-out;
 }
 .form-control::-webkit-input-placeholder {
   color: #bdbdbd;
@@ -4900,29 +4934,23 @@ select[multiple].form-control.focus {
 .form-control:-ms-input-placeholder {
   color: #bdbdbd;
 }
+textarea.form-control.focus,
+textarea.form-control:focus,
+textarea.form-control {
+  padding: 6px 10px;
+}
 .form-control[disabled],
 .form-control[readonly],
 fieldset[disabled] .form-control {
-  background-color: transparent;
-  background-color: rgba(0, 0, 0, 0);
-}
-fieldset[disabled] .form-control:disabled,
-.form-control-wrapper .form-control:disabled,
-.form-control:disabled,
-fieldset[disabled] .form-control:focus:disabled,
-.form-control-wrapper .form-control:focus:disabled,
-.form-control:focus:disabled,
-fieldset[disabled] .form-control.focus:disabled,
-.form-control-wrapper .form-control.focus:disabled,
-.form-control.focus:disabled {
-  border: 0;
+  background-color: #eceff1;
 }
 .form-control:focus,
 .form-control.focus {
   outline: none;
-  background-image: linear-gradient(#009688, #009688), linear-gradient(#d2d2d2, #d2d2d2);
+  background-image: none;
   background-size: 100% 2px, 100% 1px;
   box-shadow: none;
+  border-color: #009688;
   transition-duration: 0.3s;
 }
 .form-control-wrapper {
@@ -4932,8 +4960,8 @@ fieldset[disabled] .form-control.focus:disabled,
   color: #bdbdbd;
   position: absolute;
   pointer-events: none;
-  left: 0px;
-  top: 5px;
+  left: 10px;
+  top: 7px;
   transition: 0.3s ease all;
 }
 .form-control-wrapper .floating-label {
@@ -4941,8 +4969,9 @@ fieldset[disabled] .form-control.focus:disabled,
 }
 .form-control-wrapper .form-control:focus ~ .floating-label,
 .form-control-wrapper .form-control:not(.empty) ~ .floating-label {
-  top: -9.8px;
-  font-size: 9.8px;
+  color: #212121;
+  font-size: 12.6px;
+  top: -18.9px;
 }
 .form-control-wrapper .input-sm + .floating-label {
   font-size: 12px;
@@ -4950,8 +4979,8 @@ fieldset[disabled] .form-control.focus:disabled,
 }
 .form-control-wrapper .form-control.input-sm:focus ~ .floating-label,
 .form-control-wrapper .form-control.input-sm:not(.empty) ~ .floating-label {
-  top: -8.4px;
-  font-size: 8.4px;
+  top: -10.8px;
+  font-size: 10.8px;
 }
 .form-control-wrapper .input-lg + .floating-label {
   font-size: 18px;
@@ -4959,8 +4988,8 @@ fieldset[disabled] .form-control.focus:disabled,
 }
 .form-control-wrapper .form-control.input-lg:focus ~ .floating-label,
 .form-control-wrapper .form-control.input-lg:not(.empty) ~ .floating-label {
-  top: -12.6px;
-  font-size: 12.6px;
+  top: -16.2px;
+  font-size: 16.2px;
 }
 .form-control-wrapper .form-control:focus ~ .floating-label {
   color: #009688;
@@ -4974,7 +5003,8 @@ fieldset[disabled] .form-control.focus:disabled,
   background-color: #009688;
 }
 .form-control-wrapper .form-control:invalid {
-  background-image: linear-gradient(#f44336, #f44336), linear-gradient(#d2d2d2, #d2d2d2);
+  background-image: none;
+  border-color: #f44336;
 }
 .form-control-wrapper textarea {
   resize: none;
@@ -5019,6 +5049,10 @@ fieldset[disabled] .form-control.focus:disabled,
   background-image: linear-gradient(#f44336, #f44336), linear-gradient(#d2d2d2, #d2d2d2);
   box-shadow: none;
 }
+.form-group.has-error .form-control:focus,
+.form-group.has-error .form-control.focus {
+  background-image: none;
+}
 .form-group.has-error .control-label,
 .form-group.has-error input.form-control:focus ~ .floating-label {
   color: #f44336;
@@ -5032,6 +5066,10 @@ fieldset[disabled] .form-control.focus:disabled,
   background-image: linear-gradient(#4caf50, #4caf50), linear-gradient(#d2d2d2, #d2d2d2);
   box-shadow: none;
 }
+.form-group.has-success .form-control:focus,
+.form-group.has-success .form-control.focus {
+  background-image: none;
+}
 .form-group.has-success .control-label,
 .form-group.has-success input.form-control:focus ~ .floating-label {
   color: #4caf50;
@@ -5044,6 +5082,11 @@ fieldset[disabled] .form-control.focus:disabled,
 .form-group.has-info .form-control.focus {
   background-image: linear-gradient(#03a9f4, #03a9f4), linear-gradient(#d2d2d2, #d2d2d2);
   box-shadow: none;
+}
+.form-group.has-info .form-control:focus,
+.form-group.has-info .form-control.focus {
+  background-image: none;
+  border-color: #03a9f4;
 }
 .form-group.has-info .control-label,
 .form-group.has-info input.form-control:focus ~ .floating-label {
@@ -5396,10 +5439,6 @@ fieldset[disabled] .form-control.focus:disabled,
 .input-group .form-control-wrapper .form-control {
   float: none;
 }
-.input-group .input-group-addon {
-  border: 0;
-  background: transparent;
-}
 .input-group .input-group-btn .btn {
   border-radius: 4px;
   margin: 0;
@@ -5412,7 +5451,6 @@ select.form-control {
 select.form-control:focus,
 select.form-control.focus {
   box-shadow: none;
-  border-color: #757575;
 }
 .form-control-wrapper input[type=file] {
   opacity: 0;
@@ -5545,6 +5583,22 @@ legend {
   border: 0;
   border-radius: 0;
 }
+.navbar.navbar-white {
+  border: 1px solid #ccc;
+  box-shadow: inset 0 1px 2px #ccc;
+}
+.navbar.navbar-white .navbar-brand {
+  margin-left: -1px;
+}
+.navbar.navbar-white .navbar-right {
+  margin-right: -16px;
+}
+.navbar.navbar-white .navbar-nav > .active > a,
+.navbar.navbar-white .navbar-nav > .active > a:hover,
+.navbar.navbar-white .navbar-nav > .active > a:focus {
+  border-top: 1px solid #ccc;
+  background-color: #eeeeee;
+}
 .navbar .navbar-brand {
   position: relative;
   height: 60px;
@@ -5574,8 +5628,8 @@ legend {
 .navbar .navbar-nav > .active > a,
 .navbar .navbar-nav > .active > a:hover,
 .navbar .navbar-nav > .active > a:focus {
-  color: inherit;
-  background-color: rgba(255, 255, 255, 0.1);
+  color: #0277bd;
+  background-color: #eeeeee;
 }
 .navbar .navbar-nav > .disabled > a,
 .navbar .navbar-nav > .disabled > a:hover,
@@ -5634,8 +5688,8 @@ legend {
   .navbar .navbar-nav .open .dropdown-menu > .active > a,
   .navbar .navbar-nav .open .dropdown-menu > .active > a:hover,
   .navbar .navbar-nav .open .dropdown-menu > .active > a:focus {
-    color: inherit;
-    background-color: transparent;
+    color: #0277bd;
+    background-color: #eeeeee;
   }
   .navbar .navbar-nav .open .dropdown-menu > .disabled > a,
   .navbar .navbar-nav .open .dropdown-menu > .disabled > a:hover,
@@ -5717,7 +5771,7 @@ fieldset[disabled] .navbar .btn-link:focus {
 .navbar-default.navbar .dropdown-menu li > a:hover,
 .navbar.navbar .dropdown-menu li > a:focus,
 .navbar-default.navbar .dropdown-menu li > a:focus {
-  color: #009688;
+  color: inherit;
   background-color: #eeeeee;
 }
 .navbar.navbar .dropdown-menu .active > a,
@@ -5760,7 +5814,7 @@ fieldset[disabled] .navbar .btn-link:focus {
 }
 .navbar-black.navbar .dropdown-menu li > a:hover,
 .navbar-black.navbar .dropdown-menu li > a:focus {
-  color: #000000;
+  color: inherit;
   background-color: #eeeeee;
 }
 .navbar-black.navbar .dropdown-menu .active > a {
@@ -5800,7 +5854,7 @@ fieldset[disabled] .navbar .btn-link:focus {
 }
 .navbar-white.navbar .dropdown-menu li > a:hover,
 .navbar-white.navbar .dropdown-menu li > a:focus {
-  color: #ffffff;
+  color: inherit;
   background-color: #eeeeee;
 }
 .navbar-white.navbar .dropdown-menu .active > a {
@@ -5840,7 +5894,7 @@ fieldset[disabled] .navbar .btn-link:focus {
 }
 .navbar-inverse.navbar .dropdown-menu li > a:hover,
 .navbar-inverse.navbar .dropdown-menu li > a:focus {
-  color: #3f51b5;
+  color: inherit;
   background-color: #eeeeee;
 }
 .navbar-inverse.navbar .dropdown-menu .active > a {
@@ -5880,7 +5934,7 @@ fieldset[disabled] .navbar .btn-link:focus {
 }
 .navbar-primary.navbar .dropdown-menu li > a:hover,
 .navbar-primary.navbar .dropdown-menu li > a:focus {
-  color: #009688;
+  color: inherit;
   background-color: #eeeeee;
 }
 .navbar-primary.navbar .dropdown-menu .active > a {
@@ -5920,7 +5974,7 @@ fieldset[disabled] .navbar .btn-link:focus {
 }
 .navbar-success.navbar .dropdown-menu li > a:hover,
 .navbar-success.navbar .dropdown-menu li > a:focus {
-  color: #4caf50;
+  color: inherit;
   background-color: #eeeeee;
 }
 .navbar-success.navbar .dropdown-menu .active > a {
@@ -5960,7 +6014,7 @@ fieldset[disabled] .navbar .btn-link:focus {
 }
 .navbar-info.navbar .dropdown-menu li > a:hover,
 .navbar-info.navbar .dropdown-menu li > a:focus {
-  color: #03a9f4;
+  color: inherit;
   background-color: #eeeeee;
 }
 .navbar-info.navbar .dropdown-menu .active > a {
@@ -6000,7 +6054,7 @@ fieldset[disabled] .navbar .btn-link:focus {
 }
 .navbar-warning.navbar .dropdown-menu li > a:hover,
 .navbar-warning.navbar .dropdown-menu li > a:focus {
-  color: #ff5722;
+  color: inherit;
   background-color: #eeeeee;
 }
 .navbar-warning.navbar .dropdown-menu .active > a {
@@ -6040,7 +6094,7 @@ fieldset[disabled] .navbar .btn-link:focus {
 }
 .navbar-danger.navbar .dropdown-menu li > a:hover,
 .navbar-danger.navbar .dropdown-menu li > a:focus {
-  color: #f44336;
+  color: inherit;
   background-color: #eeeeee;
 }
 .navbar-danger.navbar .dropdown-menu .active > a {
@@ -6080,7 +6134,7 @@ fieldset[disabled] .navbar .btn-link:focus {
 }
 .navbar-material-red.navbar .dropdown-menu li > a:hover,
 .navbar-material-red.navbar .dropdown-menu li > a:focus {
-  color: #f44336;
+  color: inherit;
   background-color: #eeeeee;
 }
 .navbar-material-red.navbar .dropdown-menu .active > a {
@@ -6120,7 +6174,7 @@ fieldset[disabled] .navbar .btn-link:focus {
 }
 .navbar-material-pink.navbar .dropdown-menu li > a:hover,
 .navbar-material-pink.navbar .dropdown-menu li > a:focus {
-  color: #e91e63;
+  color: inherit;
   background-color: #eeeeee;
 }
 .navbar-material-pink.navbar .dropdown-menu .active > a {
@@ -6160,7 +6214,7 @@ fieldset[disabled] .navbar .btn-link:focus {
 }
 .navbar-material-purple.navbar .dropdown-menu li > a:hover,
 .navbar-material-purple.navbar .dropdown-menu li > a:focus {
-  color: #9c27b0;
+  color: inherit;
   background-color: #eeeeee;
 }
 .navbar-material-purple.navbar .dropdown-menu .active > a {
@@ -6200,7 +6254,7 @@ fieldset[disabled] .navbar .btn-link:focus {
 }
 .navbar-material-deep-purple.navbar .dropdown-menu li > a:hover,
 .navbar-material-deep-purple.navbar .dropdown-menu li > a:focus {
-  color: #673ab7;
+  color: inherit;
   background-color: #eeeeee;
 }
 .navbar-material-deep-purple.navbar .dropdown-menu .active > a {
@@ -6240,7 +6294,7 @@ fieldset[disabled] .navbar .btn-link:focus {
 }
 .navbar-material-indigo.navbar .dropdown-menu li > a:hover,
 .navbar-material-indigo.navbar .dropdown-menu li > a:focus {
-  color: #3f51b5;
+  color: inherit;
   background-color: #eeeeee;
 }
 .navbar-material-indigo.navbar .dropdown-menu .active > a {
@@ -6280,7 +6334,7 @@ fieldset[disabled] .navbar .btn-link:focus {
 }
 .navbar-material-blue.navbar .dropdown-menu li > a:hover,
 .navbar-material-blue.navbar .dropdown-menu li > a:focus {
-  color: #2196f3;
+  color: inherit;
   background-color: #eeeeee;
 }
 .navbar-material-blue.navbar .dropdown-menu .active > a {
@@ -6320,7 +6374,7 @@ fieldset[disabled] .navbar .btn-link:focus {
 }
 .navbar-material-light-blue.navbar .dropdown-menu li > a:hover,
 .navbar-material-light-blue.navbar .dropdown-menu li > a:focus {
-  color: #03a9f4;
+  color: inherit;
   background-color: #eeeeee;
 }
 .navbar-material-light-blue.navbar .dropdown-menu .active > a {
@@ -6360,7 +6414,7 @@ fieldset[disabled] .navbar .btn-link:focus {
 }
 .navbar-material-cyan.navbar .dropdown-menu li > a:hover,
 .navbar-material-cyan.navbar .dropdown-menu li > a:focus {
-  color: #00bcd4;
+  color: inherit;
   background-color: #eeeeee;
 }
 .navbar-material-cyan.navbar .dropdown-menu .active > a {
@@ -6400,7 +6454,7 @@ fieldset[disabled] .navbar .btn-link:focus {
 }
 .navbar-material-teal.navbar .dropdown-menu li > a:hover,
 .navbar-material-teal.navbar .dropdown-menu li > a:focus {
-  color: #009688;
+  color: inherit;
   background-color: #eeeeee;
 }
 .navbar-material-teal.navbar .dropdown-menu .active > a {
@@ -6440,7 +6494,7 @@ fieldset[disabled] .navbar .btn-link:focus {
 }
 .navbar-material-green.navbar .dropdown-menu li > a:hover,
 .navbar-material-green.navbar .dropdown-menu li > a:focus {
-  color: #4caf50;
+  color: inherit;
   background-color: #eeeeee;
 }
 .navbar-material-green.navbar .dropdown-menu .active > a {
@@ -6480,7 +6534,7 @@ fieldset[disabled] .navbar .btn-link:focus {
 }
 .navbar-material-light-green.navbar .dropdown-menu li > a:hover,
 .navbar-material-light-green.navbar .dropdown-menu li > a:focus {
-  color: #8bc34a;
+  color: inherit;
   background-color: #eeeeee;
 }
 .navbar-material-light-green.navbar .dropdown-menu .active > a {
@@ -6520,7 +6574,7 @@ fieldset[disabled] .navbar .btn-link:focus {
 }
 .navbar-material-lime.navbar .dropdown-menu li > a:hover,
 .navbar-material-lime.navbar .dropdown-menu li > a:focus {
-  color: #cddc39;
+  color: inherit;
   background-color: #eeeeee;
 }
 .navbar-material-lime.navbar .dropdown-menu .active > a {
@@ -6560,7 +6614,7 @@ fieldset[disabled] .navbar .btn-link:focus {
 }
 .navbar-material-yellow.navbar .dropdown-menu li > a:hover,
 .navbar-material-yellow.navbar .dropdown-menu li > a:focus {
-  color: #ffeb3b;
+  color: inherit;
   background-color: #eeeeee;
 }
 .navbar-material-yellow.navbar .dropdown-menu .active > a {
@@ -6600,7 +6654,7 @@ fieldset[disabled] .navbar .btn-link:focus {
 }
 .navbar-material-amber.navbar .dropdown-menu li > a:hover,
 .navbar-material-amber.navbar .dropdown-menu li > a:focus {
-  color: #ffc107;
+  color: inherit;
   background-color: #eeeeee;
 }
 .navbar-material-amber.navbar .dropdown-menu .active > a {
@@ -6640,7 +6694,7 @@ fieldset[disabled] .navbar .btn-link:focus {
 }
 .navbar-material-orange.navbar .dropdown-menu li > a:hover,
 .navbar-material-orange.navbar .dropdown-menu li > a:focus {
-  color: #ff9800;
+  color: inherit;
   background-color: #eeeeee;
 }
 .navbar-material-orange.navbar .dropdown-menu .active > a {
@@ -6680,7 +6734,7 @@ fieldset[disabled] .navbar .btn-link:focus {
 }
 .navbar-material-deep-orange.navbar .dropdown-menu li > a:hover,
 .navbar-material-deep-orange.navbar .dropdown-menu li > a:focus {
-  color: #ff5722;
+  color: inherit;
   background-color: #eeeeee;
 }
 .navbar-material-deep-orange.navbar .dropdown-menu .active > a {
@@ -6720,7 +6774,7 @@ fieldset[disabled] .navbar .btn-link:focus {
 }
 .navbar-material-brown.navbar .dropdown-menu li > a:hover,
 .navbar-material-brown.navbar .dropdown-menu li > a:focus {
-  color: #795548;
+  color: inherit;
   background-color: #eeeeee;
 }
 .navbar-material-brown.navbar .dropdown-menu .active > a {
@@ -6760,7 +6814,7 @@ fieldset[disabled] .navbar .btn-link:focus {
 }
 .navbar-material-grey.navbar .dropdown-menu li > a:hover,
 .navbar-material-grey.navbar .dropdown-menu li > a:focus {
-  color: #9e9e9e;
+  color: inherit;
   background-color: #eeeeee;
 }
 .navbar-material-grey.navbar .dropdown-menu .active > a {
@@ -6800,7 +6854,7 @@ fieldset[disabled] .navbar .btn-link:focus {
 }
 .navbar-material-blue-grey.navbar .dropdown-menu li > a:hover,
 .navbar-material-blue-grey.navbar .dropdown-menu li > a:focus {
-  color: #607d8b;
+  color: inherit;
   background-color: #eeeeee;
 }
 .navbar-material-blue-grey.navbar .dropdown-menu .active > a {
@@ -8394,7 +8448,7 @@ hr.on-light {
   top: 3px;
   font-size: 25px;
   position: absolute;
-  content: "\e894";
+  content: "\e8ac";
   font-family: "Material-Design-Icons";
   speak: none;
   font-style: normal;
