@@ -5432,10 +5432,6 @@ fieldset[disabled] .form-control {
 .form-group-material-blue-grey input.form-control:focus ~ .floating-label {
   color: #607d8b;
 }
-.input-group .form-control-wrapper {
-  margin-right: 5px;
-  margin-left: 5px;
-}
 .input-group .form-control-wrapper .form-control {
   float: none;
 }
