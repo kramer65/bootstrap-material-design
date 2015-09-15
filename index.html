@@ -151,6 +151,7 @@
             <li class="withripple" data-target="#radio-button">Radio Button</li>
             <li class="withripple" data-target="#toggle-button">Toggle Button</li>
             <li class="withripple" data-target="#input">Input</li>
+            <li class="withripple" data-target="#input-addon">Input Addon</li>
             <li class="withripple" data-target="#navbar">Navbar</li>
             <li class="withripple" data-target="#progress-bar">Progress Bar</li>
             <li class="withripple" data-target="#slider">Slider</li>
@@ -574,6 +575,70 @@
                   }
                   #input .form-control-wrapper {
                     margin: 30px 0;
+                  }
+                </style>
+
+              </div>
+            </div>
+            <div class="well page" id="input-addon">
+              <h1 class="header">Input Addon</h1>
+              <div class="inputs">
+
+                <h2>Basic example</h2>
+                <div class="input-group">
+                  <span class="input-group-addon" id="basic-addon1">@</span>
+                  <input type="text" class="form-control" placeholder="Username">
+                </div>
+
+                <div class="input-group">
+                  <input type="text" class="form-control" placeholder="Recipient's username">
+                  <span class="input-group-addon" id="basic-addon2">@example.com</span>
+                </div>
+
+                <div class="input-group">
+                  <span class="input-group-addon">$</span>
+                  <input type="text" class="form-control">
+                  <span class="input-group-addon">.00</span>
+                </div>
+
+                <h2>Basic example with floating labels</h2>
+                <div class="input-group">
+                  <span class="input-group-addon" id="basic-addon1-floating-label">@</span>
+                  <input type="text" class="form-control floating-label" placeholder="Username">
+                </div>
+
+                <div class="input-group">
+                  <input type="text" class="form-control floating-label" placeholder="Recipient's username">
+                  <span class="input-group-addon" id="basic-addon2-floating-label">@example.com</span>
+                </div>
+
+                <h2>Sizing</h2>
+                <div class="input-group input-group-lg">
+                  <span class="input-group-addon" id="sizing-addon1">@</span>
+                  <input type="text" class="form-control" placeholder="Username">
+                </div>
+
+                <div class="input-group">
+                  <span class="input-group-addon" id="sizing-addon2">@</span>
+                  <input type="text" class="form-control" placeholder="Username">
+                </div>
+
+                <div class="input-group input-group-sm">
+                  <span class="input-group-addon" id="sizing-addon3">@</span>
+                  <input type="text" class="form-control" placeholder="Username">
+                </div>
+
+                <style>
+                  #input-addon h2 {
+                    padding: 14px;
+                    font-size: 16px;
+                    font-weight: 400;
+                  }
+                  #input-addon .inputs {
+                    width: 80%;
+                  }
+                  .input-group {
+                    margin-bottom: 20px;
                   }
                 </style>
 

@@ -9,6 +9,16 @@ fieldset[disabled] .form-control, .form-control {
     }
   }
 }
+.input-group-sm,
+.input-group-lg {
+  fieldset[disabled] .form-control, .form-control {
+    &, &:focus, &.focus {
+      border-radius: 0;
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+  }
+}
 
 fieldset[disabled] .form-control, .form-control {
   &:textarea {
@@ -80,8 +90,9 @@ textarea.form-control {padding: 6px 10px;}
   }
   .form-control:focus ~ .floating-label,
   .form-control:not(.empty) ~ .floating-label {
-    top: (@floating-label-size-ratio * -@font-size-base) * 1.5;
+    color: @grey-900;
     font-size: @floating-label-size-ratio * @font-size-base;
+    top: (@floating-label-size-ratio * -@font-size-base) * 1.5;
   }
 
   .input-sm + .floating-label { // small
@@ -214,12 +225,6 @@ textarea.form-control {padding: 6px 10px;}
     .form-control {
       float: none;
     }
-    margin-right: 5px;
-    margin-left: 5px;
-  }
-  .input-group-addon {
-    border: 0;
-    background: transparent;
   }
   .input-group-btn .btn {
     border-radius: 4px;

@@ -1,7 +1,7 @@
 .btn {
   position: relative;
   padding: 8px 30px;
-  border: 0;
+  border: 1px solid @grey-400;
   margin: 10px 1px;
   cursor: pointer;
   border-radius: 2px;
@@ -11,6 +11,9 @@
 
   &:hover:not(.btn-link):not(.btn-flat):not(.btn-fab) {
     .shadow-z-1();
+  }
+  &.btn-default:hover:not(.btn-link):not(.btn-flat):not(.btn-fab) {
+    background-color: fade(@black, 20%);
   }
   &:active:not(.btn-link):not(.btn-flat):not(.btn-fab) {
     .shadow-z-1-hover();
@@ -94,6 +97,12 @@
       top: -5px;
       margin: 0 auto;
     }
+  }
+}
+.btn-link, .btn-default.btn-link, .btn-flat, .btn-default.btn-flat, .btn[class*="btn-"]:not(.btn-default) {
+  border-color: transparent;
+  &:hover {
+    background-color: none;
   }
 }
 
