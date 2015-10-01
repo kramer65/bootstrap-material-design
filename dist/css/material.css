@@ -2554,7 +2554,7 @@ Then, run this script to get the list.
 }
 body {
   background-color: #eeeeee;
-  color: #212121;
+  color: #424242;
 }
 body.inverse {
   background: #333333;
@@ -2859,18 +2859,17 @@ body .jumbotron-material-blue-grey,
 .btn {
   position: relative;
   padding: 8px 30px;
-  border: 1px solid #bdbdbd;
+  border: 1px solid #cccccc;
   margin: 10px 1px;
   cursor: pointer;
   border-radius: 2px;
-  text-transform: uppercase;
   text-decoration: none;
   color: rgba(255, 255, 255, 0.84);
   transition: background-color 0.2s ease, box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1);
   outline: none !important;
 }
 .btn:hover:not(.btn-link):not(.btn-flat):not(.btn-fab) {
-  box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.12), 0 1px 6px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 1px 6px 0 rgba(0, 0, 0, 0.12);
 }
 .btn.btn-default:hover:not(.btn-link):not(.btn-flat):not(.btn-fab) {
   background-color: rgba(0, 0, 0, 0.2);
@@ -3432,7 +3431,7 @@ body .jumbotron-material-blue-grey,
   font-size: 10px;
 }
 .btn.btn-raised {
-  box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.12), 0 1px 6px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 1px 6px 0 rgba(0, 0, 0, 0.12);
   transition: box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .btn.btn-raised:active:not(.btn-link) {
@@ -3590,7 +3589,7 @@ body .jumbotron-material-blue-grey,
 }
 .btn.btn-fab,
 .btn.btn-fab:hover {
-  box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.12), 0 1px 6px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 1px 6px 0 rgba(0, 0, 0, 0.12);
 }
 .btn.btn-fab:active {
   box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
@@ -3738,7 +3737,7 @@ body .jumbotron-material-blue-grey,
   position: relative;
   border-radius: 2px;
   margin: 10px 1px;
-  box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.12), 0 1px 6px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 1px 6px 0 rgba(0, 0, 0, 0.12);
   transition: box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .btn-group:active:not(.btn-link),
@@ -3751,7 +3750,7 @@ body .jumbotron-material-blue-grey,
 }
 .btn-group.btn-group-raised,
 .btn-group-vertical.btn-group-raised {
-  box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.12), 0 1px 6px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 1px 6px 0 rgba(0, 0, 0, 0.12);
   transition: box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .btn-group.btn-group-raised:active:not(.btn-link),
@@ -3796,21 +3795,6 @@ body .jumbotron-material-blue-grey,
   vertical-align: middle;
   position: relative;
   top: 3px;
-}
-.checkbox .checkbox-material:before {
-  display: block;
-  position: absolute;
-  left: 0;
-  content: "";
-  background-color: rgba(0, 0, 0, 0.84);
-  height: 20px;
-  width: 20px;
-  border-radius: 100%;
-  z-index: 1;
-  opacity: 0;
-  margin: 0;
-  -webkit-transform: scale3d(2.3, 2.3, 1);
-          transform: scale3d(2.3, 2.3, 1);
 }
 .checkbox .checkbox-material .check {
   position: relative;
@@ -4919,8 +4903,7 @@ select[multiple].form-control.focus {
   background-size: 0 2px, 100% 1px;
   background-repeat: no-repeat;
   background-position: center bottom, center calc(100% - 1px);
-  background-color: transparent;
-  background-color: rgba(0, 0, 0, 0);
+  background-color: #ffffff;
   height: 33px;
   padding: 0 10px;
   transition: border 0s ease-out;
@@ -4966,6 +4949,7 @@ fieldset[disabled] .form-control {
 }
 .form-control-wrapper .floating-label {
   font-size: 14px;
+  font-weight: bold;
 }
 .form-control-wrapper .form-control:focus ~ .floating-label,
 .form-control-wrapper .form-control:not(.empty) ~ .floating-label {
@@ -5440,7 +5424,6 @@ fieldset[disabled] .form-control {
   margin: 0;
 }
 select.form-control {
-  border: 0;
   box-shadow: none;
   border-radius: 0;
 }
@@ -5624,8 +5607,8 @@ legend {
 .navbar .navbar-nav > .active > a,
 .navbar .navbar-nav > .active > a:hover,
 .navbar .navbar-nav > .active > a:focus {
-  color: #0277bd;
   background-color: #eeeeee;
+  font-weight: bold;
 }
 .navbar .navbar-nav > .disabled > a,
 .navbar .navbar-nav > .disabled > a:hover,
@@ -5684,8 +5667,8 @@ legend {
   .navbar .navbar-nav .open .dropdown-menu > .active > a,
   .navbar .navbar-nav .open .dropdown-menu > .active > a:hover,
   .navbar .navbar-nav .open .dropdown-menu > .active > a:focus {
-    color: #0277bd;
     background-color: #eeeeee;
+    font-weight: bold;
   }
   .navbar .navbar-nav .open .dropdown-menu > .disabled > a,
   .navbar .navbar-nav .open .dropdown-menu > .disabled > a:hover,
@@ -5718,6 +5701,7 @@ fieldset[disabled] .navbar .btn-link:focus {
 }
 .navbar .navbar-form .form-control-wrapper .form-control,
 .navbar .navbar-form .form-control {
+  background-color: inherit;
   border-color: inherit;
   color: inherit;
 }
@@ -7358,7 +7342,7 @@ fieldset[disabled] .navbar .btn-link:focus {
   background: rgba(101, 101, 101, 0.9);
   border: none;
   border-radius: 2px;
-  box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.12), 0 1px 6px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 1px 6px 0 rgba(0, 0, 0, 0.12);
 }
 .tooltip,
 .tooltip.in {
@@ -7680,7 +7664,7 @@ icon-material-blue-grey {
 .panel {
   border-radius: 2px;
   border: 0;
-  box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.12), 0 1px 6px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 1px 6px 0 rgba(0, 0, 0, 0.12);
 }
 .panel > .panel-heading,
 .panel-default > .panel-heading {
@@ -7831,7 +7815,7 @@ hr.on-light {
   color: rgba(255, 255, 255, 0.84);
   font-size: 14px;
   border-radius: 2px;
-  box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.12), 0 1px 6px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 1px 6px 0 rgba(0, 0, 0, 0.12);
   height: 0;
   transition: -webkit-transform 0.2s ease-in-out, opacity 0.2s ease-in, height 0 linear 0.2s, padding 0 linear 0.2s, height 0 linear 0.2s;
   transition: transform 0.2s ease-in-out, opacity 0.2s ease-in, height 0 linear 0.2s, padding 0 linear 0.2s, height 0 linear 0.2s;
@@ -8458,7 +8442,7 @@ hr.on-light {
   color: #757575;
 }
 .shadow-z-1 {
-  box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.12), 0 1px 6px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 1px 6px 0 rgba(0, 0, 0, 0.12);
 }
 .shadow-z-1-hover {
   box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
