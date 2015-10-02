@@ -35554,6 +35554,7 @@ fieldset[disabled] .form-control {
   left: 10px;
   top: 7px;
   transition: 0.3s ease all;
+  z-index: 2;
 }
 .form-control-wrapper .floating-label {
   font-size: 14px;
